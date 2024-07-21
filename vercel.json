@@ -18,5 +18,14 @@
             "src": "/(.*)",
             "dest": "src/server.ts"
         }
-    ]
+    ],
+    "serverComponentsExternalPackages": [
+        "sequelize",
+        "pg"
+    ],
+    "functions": {
+        "api/**/*.ts": {
+            "maxDuration": 10
+        }
+    }
 }

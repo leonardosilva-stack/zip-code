@@ -20,4 +20,16 @@ const sequelize = new Sequelize(
   }
 );
 
+// Inicialize a conexão
+const initializeConnection = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Database connected!');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+};
+
+initializeConnection();
+
 export default sequelize;
