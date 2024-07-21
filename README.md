@@ -29,6 +29,11 @@ Esta aplicação fornece informações sobre o clima e a localização baseada e
 
 - `GET /weather/:country/:cep`: Retorna informações sobre o clima e localização baseado em um CEP. A URL deve incluir o código do país e o CEP.
 
+## 📝 Exemplo de Requisição
+
+- **URL**: `https://zip-code-nu.vercel.app/weather/BR/11310-061`
+- **Descrição**: Esta URL retorna informações sobre o clima e a localização para o CEP 11310-061 no Brasil.
+
 ## 📍 Formato dos Ceps
 
 - **CEP**: Deve ser precedido pelo código do país, por exemplo, `US/90210` para os EUA.
