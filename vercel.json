@@ -3,14 +3,7 @@
     "builds": [
         {
             "src": "src/server.ts",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "src/**/*.ts",
-                    "package.json",
-                    "tsconfig.json"
-                ]
-            }
+            "use": "@vercel/node"
         }
     ],
     "routes": [
@@ -18,14 +11,5 @@
             "src": "/(.*)",
             "dest": "src/server.ts"
         }
-    ],
-    "serverComponentsExternalPackages": [
-        "sequelize",
-        "pg"
-    ],
-    "functions": {
-        "api/**/*.ts": {
-            "maxDuration": 10
-        }
-    }
+    ]
 }
