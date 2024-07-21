@@ -4,7 +4,7 @@ import { getLocation } from '../services/locationService';
 import { rateLimiter } from '../utils/rateLimiter';
 
 export const getWeatherInfo = async (req: Request, res: Response) => {
-  const { cep } = req.params;
+  const { countryCode, cep } = req.params;
   const clientIp = req.clientIp || req.ip || '';
 
   if (await rateLimiter(clientIp)) {
@@ -12,7 +12,7 @@ export const getWeatherInfo = async (req: Request, res: Response) => {
   }
 
   try {
-    const location = await getLocation(cep);
+    const location = await getLocation(countryCode, cep);
     const weather = await getWeather(location.city);
     const localTimeData = await getLocalTime(weather.coord.lat, weather.coord.lon);
 

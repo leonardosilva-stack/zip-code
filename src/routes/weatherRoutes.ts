@@ -3,6 +3,6 @@ import { getWeatherInfo } from '../controllers/weatherController';
 
 const router = Router();
 
-router.get('/:cep', getWeatherInfo);
+router.get('/:countryCode/:cep', getWeatherInfo);
 
 export default router;
