@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "postinstall": "npm install"
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@types/express": "^4.17.21",
