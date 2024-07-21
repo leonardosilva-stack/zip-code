@@ -2,7 +2,7 @@
 
 Esta aplicação fornece informações sobre o clima e a localização baseada em um CEP.
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - Node.js
 - TypeScript
@@ -12,33 +12,32 @@ Esta aplicação fornece informações sobre o clima e a localização baseada e
 - Axios
 - dotenv
 
-## Requisitos
+## 📋 Requisitos
 
 - Conta na OpenWeatherMap para obter a chave da API
 - Conta na TimeZoneDB para obter a chave da API
 - Banco de Dados PostgreSQL (Vercel)
 
-## Configuração
+## ⚙️ Configuração
 
 1. Clone o repositório
 2. Instale as dependências: `npm install`
 3. Configure as variáveis de ambiente no arquivo `.env` com suas informações reais
 4. Inicie o servidor: `npm run dev`
 
-## Endpoints
+## 🌐 Endpoints
 
-- `GET /weather/:cep`: Retorna informações sobre o clima e localização baseado em um CEP.
+- `GET /weather/:country/:cep`: Retorna informações sobre o clima e localização baseado em um CEP. A URL deve incluir o código do país e o CEP.
 
-## Formato dos Ceps
+## 📍 Formato dos Ceps
 
-- **CEP Brasileiro**: Deve seguir o formato `00000-000`.
-- **CEP Internacional**: Pode seguir outros formatos válidos para CEPs fora do Brasil.
+- **CEP**: Deve ser precedido pelo código do país, por exemplo, `US/90210` para os EUA.
 
-## Limite de Requisições
+## 🚦 Limite de Requisições
 
 Cada IP pode fazer até 5 requisições por dia. Após isso, a aplicação retornará uma mensagem informando que o limite foi excedido e para tentar novamente no dia seguinte.
 
-## Estrutura dos Arquivos
+## 📂 Estrutura dos Arquivos
 
 - `src/controllers/weatherController.ts`: Controlador que lida com as requisições relacionadas ao clima e localização.
 - `src/models/index.ts`: Configuração e definição do modelo do banco de dados.
@@ -49,20 +48,20 @@ Cada IP pode fazer até 5 requisições por dia. Após isso, a aplicação retor
 - `src/app.ts`: Configuração do Express e outras configurações iniciais.
 - `src/server.ts`: Arquivo principal que inicializa o servidor.
 
-## Funcionalidades
+## 🚀 Funcionalidades
 
 - **Localização**: Recupera dados de localização com base em um CEP, incluindo cidade e país. Suporta CEPs brasileiros e internacionais.
 - **Clima**: Fornece informações climáticas atuais, incluindo temperatura e descrição do clima.
 - **Rate Limiting**: Limita o número de requisições por IP para prevenir abusos.
 - **Data e Hora**: Retorna a hora e data local do lugar consultado.
 
-### Notas Adicionais
+### 📝 Notas Adicionais
 
 - **Credenciais e Configurações**: Certifique-se de que o arquivo `.env` está configurado corretamente com a chave da API e quaisquer outras configurações necessárias.
 - **Banco de Dados**: Ajuste o arquivo de configuração para refletir suas credenciais do PostgreSQL.
 - **Execução**: Inclua um script `start` no `package.json` para executar o servidor.
 
-### Exemplos de Configuração do `.env`
+### 📄 Exemplos de Configuração do `.env`
 
 ```plaintext
 DB_NAME=your_database_name
@@ -73,3 +72,10 @@ DB_PORT=your_database_port
 OPENWEATHER_API_KEY=your_openweather_api_key
 TIMEZONEDB_API_KEY=your_timezonedb_api_key
 ```
+
+## 📚 Créditos
+
+- API Zippopotam.us: https://api.zippopotam.us/
+- ViaCEP: https://viacep.com.br/
+- TimeZoneDB: https://timezonedb.com/
+- OpenWeatherMap: https://openweathermap.org/
