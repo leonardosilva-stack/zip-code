@@ -9,6 +9,11 @@ app.set('trust proxy', true);
 
 app.use(express.json());
 app.use(requestIp.mw());
+
+app.get('/', (req, res) => {
+  res.redirect('/weather/BR/11310-061');
+});
+
 app.use('/weather', weatherRoutes);
 
 const startServer = async () => {
